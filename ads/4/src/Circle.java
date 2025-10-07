@@ -1,3 +1,5 @@
+import java.lang.Math;
+
 public class Circle extends Shape{
     protected Double radius;
     
@@ -12,7 +14,7 @@ public class Circle extends Shape{
         this.radius = radius;
     }
 
-    public Circle(String color, boolean filled, Double radius)
+    public Circle(Double radius, String color, boolean filled)
     {
         super(color, filled);
         this.radius = radius;
@@ -23,11 +25,23 @@ public class Circle extends Shape{
         return this.radius;
     }
 
-    public void setRaidus(Double radius)
+    public void setRadius(Double radius)
     {
         this.radius = radius;
     }
 
-    public double
+    public double getArea()
+    {
+        return Math.PI * Math.pow(this.radius, 2);
+    }
 
+    public double getPerimeter()
+    {
+        return 2 * Math.PI * this.radius;
+    }
+
+    public String toString()
+    {
+        return "Круг с радиусом " + this.radius.toString();
+    }
 }
